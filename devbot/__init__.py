@@ -1,0 +1,1 @@
+"""DEVbot Discord package."""
