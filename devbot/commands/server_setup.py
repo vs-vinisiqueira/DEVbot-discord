@@ -35,7 +35,10 @@ def register_server_setup_commands(bot: commands.Bot) -> None:
                 await ctx.send(f"Categoria já existe: {category_name}")
 
             for channel_name in channels:
-                existing_channel = discord.utils.get(guild.text_channels, name=channel_name)
+                existing_channel = discord.utils.get(
+                    guild.text_channels,
+                    name=channel_name,
+                )
 
                 if existing_channel is None:
                     await guild.create_text_channel(channel_name, category=category)
