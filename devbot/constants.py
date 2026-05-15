@@ -1,7 +1,9 @@
 ROLES = [
-    "Dev Backend",
-    "Dev Frontend",
-    "Banco de Dados",
+    "Administrador",
+    "Equipe",
+    "Desenvolvedor",
+    "Suporte",
+    "Cliente",
     "Visitante",
 ]
 
@@ -12,10 +14,16 @@ CHANNEL_STRUCTURE = {
         "regras",
         "links-importantes",
     ],
-    "💻 PROJETOS": [
-        "backend",
-        "frontend",
-        "duvidas-de-codigo",
+    "💻 PROJETO MEUSITEJÁ": [
+        "planejamento",
+        "demandas",
+        "tarefas",
+        "arquivos",
+    ],
+    "🛠️ SUPORTE": [
+        "atendimento",
+        "dúvidas",
+        "suporte-técnico",
     ],
     "🤖 BOT": [
         "comandos",

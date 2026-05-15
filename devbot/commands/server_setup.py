@@ -14,7 +14,7 @@ def register_server_setup_commands(bot: commands.Bot) -> None:
             await ctx.send("Esse comando só pode ser usado dentro de um servidor.")
             return
 
-        await ctx.send("Iniciando configuração do servidor acadêmico...")
+        await ctx.send("Iniciando configuração do servidor MeuSiteJá...")
 
         for role_name in ROLES:
             existing_role = discord.utils.get(guild.roles, name=role_name)
@@ -46,7 +46,7 @@ def register_server_setup_commands(bot: commands.Bot) -> None:
                 else:
                     await ctx.send(f"Canal já existe: #{channel_name}")
 
-        await ctx.send("Servidor configurado com sucesso.")
+        await ctx.send("Servidor MeuSiteJá configurado com sucesso.")
 
     @setup.error
     async def setup_error(ctx: commands.Context, error: commands.CommandError) -> None:

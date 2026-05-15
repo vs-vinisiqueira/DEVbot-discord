@@ -16,10 +16,21 @@ class TrelloSettings:
 
 
 @dataclass(frozen=True)
+class OpenAISettings:
+    api_key: str | None
+    model: str
+
+    @property
+    def is_configured(self) -> bool:
+        return bool(self.api_key)
+
+
+@dataclass(frozen=True)
 class Settings:
     discord_token: str
     command_prefix: str
     trello: TrelloSettings
+    openai: OpenAISettings
 
 
 def load_settings() -> Settings:
@@ -36,5 +47,9 @@ def load_settings() -> Settings:
             api_key=os.getenv("TRELLO_API_KEY"),
             token=os.getenv("TRELLO_TOKEN"),
             list_id=os.getenv("TRELLO_LIST_ID"),
+        ),
+        openai=OpenAISettings(
+            api_key=os.getenv("OPENAI_API_KEY"),
+            model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
         ),
     )

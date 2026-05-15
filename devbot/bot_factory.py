@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 
+from devbot.commands.ai_actions import register_ai_action_commands
 from devbot.commands.general import register_general_commands
 from devbot.commands.server_setup import register_server_setup_commands
 from devbot.commands.tasks import register_task_commands
@@ -20,10 +21,11 @@ def create_bot(settings: Settings) -> commands.Bot:
 
     @bot.event
     async def on_ready() -> None:
-        print(f"DEVbot conectado como {bot.user}")
+        print(f"MeuSiteJá conectado como {bot.user}")
 
     register_general_commands(bot)
     register_server_setup_commands(bot)
     register_task_commands(bot, settings.trello)
+    register_ai_action_commands(bot, settings.openai, settings.trello)
 
     return bot
